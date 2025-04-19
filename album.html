@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Álbum de Pinturas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('album.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    h1 {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 2em;
+      margin-top: 30px;
+    }
+
+    .carrusel {
+      margin-top: 40px;
+      width: 800px;
+      height: 550px;
+      border: 5px solid white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px black;
+    }
+
+    .carrusel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mi pequeño álbum para ti 🎨</h1>
+
+  <div class="carrusel">
+    <img id="imagen" src="imagen1.jpg" alt="Imagen del álbum">
+  </div>
+
+  <script>
+    const imagenes = [
+      'imagen1.jpg',
+      'imagen2.jpg',
+      'imagen3.jpg',
+      'imagen4.jpg',
+      'imagen5.jpg',
+      'imagen6.jpg',
+      'imagen7.jpg',
+      'imagen8.jpeg',
+      'imagen9.jpg',
+      'imagen10.jpg',
+      'imagen11.jpg',
+      'imagen12.jpg'
+    ];
+
+    let index = 0;
+    const imgElement = document.getElementById('imagen');
+
+    setInterval(() => {
+      index = (index + 1) % imagenes.length;
+      imgElement.src = imagenes[index];
+    }, 3000);
+  </script>
+</body>
+</html>
+
